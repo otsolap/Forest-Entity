@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_partials_buttons",
+  "info": {
+    "displayName": "Buttons",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "select_theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "default": "primary",
+      "required": true
+    },
+    "Link": {
+      "displayName": "Link",
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.link"
+    }
+  }
+}
