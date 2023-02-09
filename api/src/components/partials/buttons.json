@@ -1,8 +1,7 @@
 {
   "collectionName": "components_partials_buttons",
   "info": {
-    "displayName": "Buttons",
-    "description": ""
+    "displayName": "Buttons"
   },
   "options": {},
   "attributes": {
@@ -11,13 +10,12 @@
       "enum": [
         "primary",
         "secondary",
-        "tertiary"
+        "tertiary",
+        "plain"
       ],
-      "default": "primary",
-      "required": true
+      "default": "primary"
     },
-    "Link": {
-      "displayName": "Link",
+    "link": {
       "type": "component",
       "repeatable": false,
       "component": "partials.link"
