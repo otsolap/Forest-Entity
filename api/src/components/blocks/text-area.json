@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_text_areas",
+  "info": {
+    "displayName": "textArea"
+  },
+  "options": {},
+  "attributes": {
+    "textArea": {
+      "type": "richtext"
+    },
+    "selectTheme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "plain"
+      ],
+      "default": "plain"
+    }
+  }
+}

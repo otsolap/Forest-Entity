@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_cards",
+  "info": {
+    "displayName": "Cards",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Card": {
+      "displayName": "Card",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.card"
+    }
+  }
+}

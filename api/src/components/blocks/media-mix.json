@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_media_mixes",
+  "info": {
+    "displayName": "mediaMix",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "mediamixItem": {
+      "displayName": "mediaMixItem",
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.media-mix-item",
+      "max": 2,
+      "min": 2
+    }
+  }
+}

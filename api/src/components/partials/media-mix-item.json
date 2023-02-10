@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_partials_media_mix_items",
+  "info": {
+    "displayName": "mediaMixItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "image",
+        "video"
+      ]
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video": {
+      "type": "string"
+    }
+  }
+}

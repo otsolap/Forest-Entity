@@ -12,7 +12,7 @@
     "description": {
       "type": "text"
     },
-    "align_content": {
+    "alignContent": {
       "type": "enumeration",
       "enum": [
         "left",
@@ -28,16 +28,8 @@
       ],
       "default": "image"
     },
-    "media_width": {
+    "mediaWidth": {
       "type": "boolean"
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "video": {
       "type": "string"
@@ -45,6 +37,18 @@
     "autoplay": {
       "type": "boolean",
       "default": false
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.link",
+      "max": 2
+    },
+    "Image": {
+      "displayName": "Image",
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.image"
     }
   }
 }
