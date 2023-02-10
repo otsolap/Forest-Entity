@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "question": {
+    "title": {
       "type": "string"
     },
-    "answer": {
+    "body": {
       "type": "richtext"
     }
   }

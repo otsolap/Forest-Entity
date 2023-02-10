@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_partials_cards",
+  "collectionName": "components_blocks_highlights",
   "info": {
-    "displayName": "Card"
+    "displayName": "Highlight"
   },
   "options": {},
   "attributes": {
@@ -9,7 +9,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "richtext"
     },
     "image": {
       "allowedTypes": [

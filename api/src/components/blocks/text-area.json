@@ -1,11 +1,12 @@
 {
   "collectionName": "components_blocks_text_areas",
   "info": {
-    "displayName": "textArea"
+    "displayName": "textArea",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "textArea": {
+    "text": {
       "type": "richtext"
     },
     "selectTheme": {

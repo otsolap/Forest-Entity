@@ -9,12 +9,12 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "text",
+        "markdown",
         "image",
         "video"
       ]
     },
-    "text": {
+    "markdown": {
       "type": "richtext"
     },
     "image": {

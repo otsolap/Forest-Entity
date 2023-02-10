@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_accordions",
   "info": {
-    "displayName": "Accordion"
+    "displayName": "Accordion",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,14 +13,17 @@
       "type": "text"
     },
     "image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "faqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faq.faq"
     }
   }
 }
