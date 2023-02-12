@@ -31,7 +31,8 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "private": true
     },
     "article": {
       "type": "relation",

@@ -14,13 +14,11 @@
   "attributes": {
     "firstname": {
       "type": "string",
-      "required": true,
-      "regex": "/^(?=.{1,50}$)[a-z]+(?:['_.\\s][a-z]+)*$/i"
+      "required": true
     },
     "email": {
       "type": "text",
-      "required": true,
-      "regex": "/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\\. [a-zA-Z0-9-]+)*$/"
+      "required": true
     }
   }
 }
