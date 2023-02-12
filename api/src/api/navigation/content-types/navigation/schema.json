@@ -4,7 +4,8 @@
   "info": {
     "singularName": "navigation",
     "pluralName": "navigations",
-    "displayName": "Navigation"
+    "displayName": "Navigation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,8 +15,19 @@
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
-        "partials.link"
+        "util.menu-item"
       ]
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.button"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slogan": {
+      "type": "text"
     }
   }
 }

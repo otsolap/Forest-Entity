@@ -1,7 +1,8 @@
 {
   "collectionName": "components_partials_youtube_embeds",
   "info": {
-    "displayName": "youtubeEmbed"
+    "displayName": "youtubeEmbed",
+    "description": ""
   },
   "options": {},
   "attributes": {

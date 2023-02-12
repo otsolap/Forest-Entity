@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_util_social_media_types",
+  "info": {
+    "displayName": "socialMediaType",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Email",
+        "Twitter",
+        "Instagram"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    }
+  }
+}

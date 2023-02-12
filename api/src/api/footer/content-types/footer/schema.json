@@ -15,10 +15,17 @@
     "contentBlocks": {
       "type": "dynamiczone",
       "components": [
-        "partials.footer-column",
-        "partials.footer-legal",
-        "partials.social-media-type"
-      ]
+        "util.footer-column",
+        "util.footer-legal",
+        "util.footer-social-media"
+      ],
+      "min": 3,
+      "max": 3
+    },
+    "subFooter": {
+      "type": "component",
+      "repeatable": false,
+      "component": "util.footer-legal"
     }
   }
 }

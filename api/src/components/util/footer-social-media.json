@@ -1,21 +1,18 @@
 {
-  "collectionName": "components_partials_social_media_types",
+  "collectionName": "components_util_footer_social_medias",
   "info": {
     "displayName": "footerSocialMedia",
     "description": ""
   },
   "options": {},
   "attributes": {
+    "socialMedia": {
+      "type": "component",
+      "repeatable": true,
+      "component": "util.social-media-type"
+    },
     "title": {
       "type": "string"
-    },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "email",
-        "twitter",
-        "instagram"
-      ]
     },
     "open": {
       "type": "boolean"
