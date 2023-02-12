@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_blocks_blogs",
+  "info": {
+    "displayName": "blogs",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "selectTheme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary"
+      ],
+      "default": "primary"
+    },
+    "filter": {
+      "type": "enumeration",
+      "enum": [
+        "latest",
+        "custom"
+      ],
+      "default": "latest"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.link"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}

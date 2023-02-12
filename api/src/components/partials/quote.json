@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_partials_quotes",
+  "info": {
+    "displayName": "quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

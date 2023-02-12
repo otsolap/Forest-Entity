@@ -38,6 +38,15 @@
       "relation": "oneToOne",
       "target": "api::article.article",
       "mappedBy": "author"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "buttons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partials.link",
+      "max": 2
     }
   }
 }

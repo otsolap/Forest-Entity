@@ -42,6 +42,15 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "content_blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "partials.youtube-embed",
+        "partials.image",
+        "partials.quote",
+        "partials.article-text-block"
+      ]
     }
   }
 }
