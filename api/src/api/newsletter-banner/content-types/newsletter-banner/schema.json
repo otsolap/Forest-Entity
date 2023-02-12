@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "newsletter_modals",
+  "collectionName": "newsletter_banners",
   "info": {
-    "singularName": "newsletter-modal",
-    "pluralName": "newsletter-modals",
-    "displayName": "newsletterModal"
+    "singularName": "newsletter-banner",
+    "pluralName": "newsletter-banners",
+    "displayName": "newsletterBanner"
   },
   "options": {
     "draftAndPublish": true
