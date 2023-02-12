@@ -28,15 +28,15 @@
       ],
       "default": "latest"
     },
-    "button": {
-      "type": "component",
-      "repeatable": false,
-      "component": "partials.link"
-    },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.link"
     }
   }
 }

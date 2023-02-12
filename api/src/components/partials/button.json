@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_partials_buttons",
+  "info": {
+    "displayName": "button",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ahref": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank"
+      ]
+    },
+    "selectTheme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ],
+      "default": "primary"
+    }
+  }
+}

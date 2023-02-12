@@ -1,7 +1,8 @@
 {
   "collectionName": "components_partials_article_text_blocks",
   "info": {
-    "displayName": "article_text_block"
+    "displayName": "articlesTextBlock",
+    "description": ""
   },
   "options": {},
   "attributes": {

@@ -23,7 +23,7 @@
     "button": {
       "type": "component",
       "repeatable": false,
-      "component": "partials.link"
+      "component": "partials.button"
     }
   }
 }

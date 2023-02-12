@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "partials.footer-column",
+        "partials.footer-legal",
+        "partials.social-media-type"
+      ]
+    }
+  }
+}

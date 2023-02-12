@@ -1,7 +1,7 @@
 {
   "collectionName": "components_partials_links",
   "info": {
-    "displayName": "Button",
+    "displayName": "Link",
     "description": ""
   },
   "options": {},
@@ -21,16 +21,6 @@
       "enum": [
         "_blank"
       ]
-    },
-    "selectTheme": {
-      "type": "enumeration",
-      "enum": [
-        "primary",
-        "secondary",
-        "tertiary",
-        "plain"
-      ],
-      "default": "primary"
     }
   }
 }

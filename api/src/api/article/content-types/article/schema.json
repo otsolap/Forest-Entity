@@ -43,7 +43,7 @@
       "type": "uid",
       "targetField": "title"
     },
-    "content_blocks": {
+    "contentBlocks": {
       "type": "dynamiczone",
       "components": [
         "partials.youtube-embed",
