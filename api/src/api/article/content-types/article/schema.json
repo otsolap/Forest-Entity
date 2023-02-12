@@ -43,7 +43,7 @@
       "type": "uid",
       "targetField": "title"
     },
-    "contentBlocks": {
+    "blocks": {
       "type": "dynamiczone",
       "components": [
         "partials.image",

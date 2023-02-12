@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "contentBlocks": {
+    "blocks": {
       "type": "dynamiczone",
       "components": [
         "util.footer-column",
