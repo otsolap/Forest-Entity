@@ -18,9 +18,9 @@
         "util.menu-item"
       ]
     },
-    "CTA": {
+    "buttons": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "partials.button"
     },
     "title": {
