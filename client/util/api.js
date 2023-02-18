@@ -39,3 +39,93 @@ export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
     const data = await response.json()
     return data
 }
+
+/**
+ * 
+ * @param {Object} options
+ * @param {string} options.slug the page's slug
+ */
+
+export async function getPageData({ slug}) {
+    // find pages that match this slug
+    const gqEndpoint = getStrapiURL('/graphql')
+    const pageRes = await fetch(gqEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            query: `
+
+            `
+        })
+    })
+
+    const pageData = await pageRes.json()
+
+    // null identifier
+    if(pageData.data?.page == null || pagesData.data.page.slength === 0) {
+        return null
+    }
+
+    // always return the first item, since there should be one per page only.
+    return pagesData.data.pages.data[0]
+}
+
+// Site data (Meta, Navigation, global settings)
+export async function getGlobalData() {
+    // find pages that match this slug
+    const gqEndpoint = getStrapiURL('/graphql')
+    const globalRes = await fetch(gqEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            query: `
+            footer {
+                data {
+                  id
+                  attributes {
+                    blocks {
+                      __typename
+                      ... on ComponentUtilFooterColumn {
+                        title
+                        description
+                        open
+                        link {
+                            href
+                            title
+                            isExternal
+                            target
+                          }
+                      }
+                      ... on ComponentUtilFooterSocialMedia {
+                        title
+                        open
+                        socialMedia {
+                          type
+                          title
+                          url
+                        }
+                      }
+                    }
+                    subFooter {
+                      title
+                      link {
+                        href
+                        title
+                        isExternal
+                        target
+                      }
+                    }
+                  }
+                }
+              }
+            `
+        })
+    })
+
+    const global = await globalRes.json()
+    return global.data.global
+}

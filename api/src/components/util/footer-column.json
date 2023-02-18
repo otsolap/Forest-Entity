@@ -15,6 +15,11 @@
     "open": {
       "type": "boolean",
       "default": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.link"
     }
   }
 }
