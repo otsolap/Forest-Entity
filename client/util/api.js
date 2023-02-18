@@ -56,7 +56,39 @@ export async function getPageData({ slug}) {
         },
         body: JSON.stringify({
             query: `
-
+            page {
+              data {
+                attributes {
+                  title
+                  slug
+                  seo {
+                    title
+                    description
+                    meta {
+                      title
+                      description
+                    }
+                    preventIndexing
+                    structuredData
+                  }
+                  blocks {
+                    __typename
+                    ... on ComponentBlocksAccordion {
+                      title
+                      description
+                      faqs {
+                        data {
+                          attributes {
+                            title
+                            body
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
             `
         })
     })
@@ -83,9 +115,30 @@ export async function getGlobalData() {
         },
         body: JSON.stringify({
             query: `
+            navigation {
+              data {
+                attributes {
+                  title
+                  slogan
+                  blocks {
+                    __typename
+                    ... on ComponentUtilMenuItem {
+                      title
+                      href
+                    }
+                  }
+                  buttons {
+                    title
+                    ahref
+                    isExternal
+                    target
+                    selectTheme
+                  }
+                }
+              }
+            }
             footer {
                 data {
-                  id
                   attributes {
                     blocks {
                       __typename
