@@ -16,7 +16,6 @@
       "type": "dynamiczone",
       "components": [
         "util.footer-column",
-        "util.footer-legal",
         "util.footer-social-media"
       ],
       "min": 3,
@@ -25,7 +24,7 @@
     "subFooter": {
       "type": "component",
       "repeatable": false,
-      "component": "util.footer-legal"
+      "component": "util.sub-footer"
     }
   }
 }

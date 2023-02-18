@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_util_sub_footers",
+  "info": {
+    "displayName": "subFooter"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.image"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "partials.link"
+    }
+  }
+}
