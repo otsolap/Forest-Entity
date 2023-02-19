@@ -1,17 +1,27 @@
-import Hero from '@/components/Blocks/Hero'
+import Hero from "@/components/Blocks/Hero";
 
 const blocksComponents = {
-    ComponentBlocksHero: Hero,
-}
+  ComponentBlocksHero: Hero,
+};
 
-const Blocks = ({ blocksData }) => {
-    const BlocksComponent = blocksComponents[blocksData.__typename]
+const Block = ({ blocksData }) => {
+  const BlocksComponent = blocksComponents[blocksData.__typename];
 
-    if (!BlocksComponent) {
-        return null
-    }
+  if (!BlocksComponent) {
+    return null;
+  }
 
-    return <BlocksComponent data={blocksData} />
-}
+  return <BlocksComponent data={blocksData} />;
+};
 
-export default Blocks
+const Blocks = ({ blocks }) => {
+  return (
+    <>
+      {blocks.map((block) => (
+        <Block blocksData={block} key={`${block.__typename}${block.id}`} />
+      ))}
+    </>
+  );
+};
+
+export default Blocks;

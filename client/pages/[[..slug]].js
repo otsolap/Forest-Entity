@@ -3,9 +3,7 @@ import { fetchAPI, getGlobalData, getPageData } from "util/api";
 import Blocks from "components/Blocks";
 import Meta from "components/Meta";
 import Layout from "@/components/Layout";
-import { createContext } from "react";
 import { fetchAPI } from "@/util/api";
-import { getStrapiMedia } from "@/util/media";
 import { useRouter } from "next/router";
 
 // The file is called [[...slug]].js because we're using Next's
