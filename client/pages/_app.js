@@ -1,7 +1,7 @@
 import App from "next/app";
 import Error from "next/error";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { getGlobalData } from "util/api";
+import { getGlobalData } from "utils/api";
 
 
 function MyApp({ Component, pageProps }) {

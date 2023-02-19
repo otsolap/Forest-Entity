@@ -3,7 +3,6 @@ import Link from "next/link";
 import useToggle from "@/hooks/useToggleState";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp, faAngleDown } from "@fortawesome/free-solid-svg-icons";
-import MarkdownBlock from "@/partials/MarkdownBlock";
 
 const FooterColumn = ({ open, title, body, link }) => {
   const contentRef = useRef(null);
