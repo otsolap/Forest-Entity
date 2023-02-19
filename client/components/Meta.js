@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useContext } from 'react'
 import { GlobalContext } from 'pages/_app'
-import { getStrapiMedia } from 'util/media'
+import { getStrapiMedia } from 'utils/media'
 
 const Meta = ({ meta }) => (
     <Head>
