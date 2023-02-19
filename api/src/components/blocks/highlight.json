@@ -24,6 +24,14 @@
       "type": "component",
       "repeatable": false,
       "component": "partials.button"
+    },
+    "selectTheme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary"
+      ]
     }
   }
 }
