@@ -1,9 +1,8 @@
 import Error from "next/error";
-import { fetchAPI, getGlobalData, getPageData } from "util/api";
+import { fetchAPI, getGlobalData, getPageData } from "@/util/api";
 import Blocks from "components/Blocks";
 import Meta from "components/Meta";
 import Layout from "@/components/Layout";
-import { fetchAPI } from "@/util/api";
 import { useRouter } from "next/router";
 
 // The file is called [[...slug]].js because we're using Next's
