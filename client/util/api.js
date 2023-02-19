@@ -54,115 +54,112 @@ export async function getPageData({ slug }) {
     },
     body: JSON.stringify({
       query: `
-      query GetPages(
-        $slug: String!
-        $publicationState: PublicationState!
-        $locale: I18NLocaleCode!
-      ){
-      pages {
-        data {
-          attributes {
-            title
-            filters: { slug: { eq: $slug } }
-            seo {
+      query {
+        pages {
+          data {
+            attributes {
               title
-              description
-              meta {
+              slug
+              seo {
                 title
                 description
+                meta {
+                  title
+                  description
+                }
+                preventIndexing
+                structuredData
               }
-              preventIndexing
-              structuredData
-            }
-            blocks {
-              __typename
-              ... on ComponentBlocksAccordion {
-                title
-                description
-                faqs {
-                  data {
-                    attributes {
-                      title
-                      body
+              blocks {
+                __typename
+                ... on ComponentBlocksAccordion {
+                  title
+                  description
+                  faqs {
+                    data {
+                      attributes {
+                        title
+                        body
+                      }
                     }
                   }
                 }
-              }
-              ... on ComponentBlocksBlogs {
-                title
-                description
-                filter
-                articles {
-                  data {
-                    attributes {
-                      title
-                      description
-                      publishedAt
-                      category {
-                        data {
-                          attributes {
-                            title
+                ... on ComponentBlocksBlogs {
+                  title
+                  description
+                  filter
+                  articles {
+                    data {
+                      attributes {
+                        title
+                        description
+                        publishedAt
+                        category {
+                          data {
+                            attributes {
+                              title
+                            }
                           }
                         }
                       }
                     }
                   }
+                  link {
+                    href
+                    title
+                    isExternal
+                    target
+                  }
                 }
-                link {
-                  href
-                  title
-                  isExternal
-                  target
-                }
-              }
-              ... on ComponentBlocksCards {
-                title
-                description
-                Card {
+                ... on ComponentBlocksCards {
                   title
                   description
+                  Card {
+                    title
+                    description
+                  }
                 }
-              }
-              ... on ComponentBlocksHero {
-                title
-                description
-                alignContent
-                mediaWidth
-                video
-                autoplay
-                media
-                Image {
-                  alt
-                }
-                buttons {
-                  ahref
+                ... on ComponentBlocksHero {
                   title
-                  isExternal
-                  target
-                  selectTheme
-                }
-              }
-              ... on ComponentBlocksHighlight {
-                title
-                description
-                button {
-                  ahref
-                  title
-                  isExternal
-                  target
-                  selectTheme
-                }
-                selectTheme
-              }
-              ... on ComponentBlocksMediaMix {
-                item {
-                  type
-                  markdown
+                  description
+                  alignContent
+                  mediaWidth
                   video
+                  autoplay
+                  media
+                  Image {
+                    alt
+                  }
+                  buttons {
+                    ahref
+                    title
+                    isExternal
+                    target
+                    selectTheme
+                  }
                 }
-              }
-              ... on ComponentBlocksTextArea {
-                text
+                ... on ComponentBlocksHighlight {
+                  title
+                  description
+                  button {
+                    ahref
+                    title
+                    isExternal
+                    target
+                    selectTheme
+                  }
+                  selectTheme
+                }
+                ... on ComponentBlocksMediaMix {
+                  item {
+                    type
+                    markdown
+                    video
+                  }
+                }
+                ... on ComponentBlocksTextArea {
+                  text
+                }
               }
             }
           }
