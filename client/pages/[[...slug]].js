@@ -1,5 +1,5 @@
 import Error from "next/error";
-import { fetchAPI, getGlobalData, getPageData } from "@/util/api";
+import { fetchAPI, getGlobalData, getPageData } from "@/utils/api";
 import Blocks from "components/Blocks";
 import Meta from "components/Meta";
 import Layout from "@/components/Layout";
@@ -24,28 +24,25 @@ const DynamicPage = ({ blocks, meta, global, pageContext }) => {
   );
 };
 
-export async function getStaticPaths(context) {
-  // Gwt all pages from Strapi
-  const pages = await context.reduce(async (currentPagesPromise) => {
-    const currentPages = await currentPagesPromise;
-    const pageData = await fetchAPI("/pages", {
-      field: "slug",
-    });
-    return [...currentPages, ...pageData.data];
-  }, Promise.resolve([]));
-  const paths = pages.map((page) => {
+// alternative from chatgpt:
+export async function getStaticPaths() {
+  // Get all pages from Strapi
+  const pages = await fetchAPI("/pages", {
+    fields: ["slug"],
+  });
+
+  const paths = pages.data.map((page) => {
     const { slug } = page.attributes;
-    // Decompose slug that was saved in Strapi
+    // Decompose the slug that was saved in Strapi
     const slugArray = !slug ? false : slug.split("/");
 
     return {
-      params: {
-        slug: slugArray,
-      },
+      params: { slug: slugArray },
     };
   });
+
   return { paths, fallback: true };
-}
+} 
 
 export async function getStaticProps(context) {
   const { params } = context;
