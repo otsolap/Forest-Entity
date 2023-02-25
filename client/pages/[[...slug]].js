@@ -13,7 +13,7 @@ const DynamicPage = ({ blocks, meta, global, pageContext }) => {
   const router = useRouter();
 
   // check if the required data was provided
-  if (!router.isFallback && !blocks.length) {
+  if (!router.isFallback && !blocks?.length) {
     return <Error statusCode={404} />;
   }
 
@@ -35,7 +35,6 @@ export async function getStaticPaths() {
     const { slug } = page.attributes;
     // Decompose the slug that was saved in Strapi
     const slugArray = !slug ? false : slug.split("/");
-
     return {
       params: { slug: slugArray },
     };
@@ -46,11 +45,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-
   const global = await getGlobalData();
   // fetch Pages
   const pageData = await getPageData({
-    slug: (!params.slug ? [""] : params.slug).join("/"),
+   /*  slug: (!params.slug ? [""] : params.slug).join("/") */
+   slug: "/about"
   });
 
   if (pageData == null) {
@@ -58,7 +57,7 @@ export async function getStaticProps(context) {
     return { props: {} };
   }
 
-  // put th data to the components
+  // put the data to the components
   const { blocks, slug} = pageData.attributes
 
   const pageContext = {

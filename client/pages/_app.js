@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { getGlobalData } from "utils/api";
 
 
+
 function MyApp({ Component, pageProps }) {
   // extracting necessary data
   const { global } = pageProps;

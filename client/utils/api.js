@@ -56,9 +56,14 @@ export async function getPageData({ slug }) {
     },
     body: JSON.stringify({
       query: `
-      query {
-        pages {
+      query GetPages(
+        $slug: String!
+        ) {
+        pages(
+          filters: { slug: { eq: $slug } }
+          ) {
           data {
+            id
             attributes {
               title
               slug
@@ -168,13 +173,14 @@ export async function getPageData({ slug }) {
         }
       }
       `,
+      variables: { slug }
     }),
-  });
+  })
 
-  const pageData = await pageRes.json();
+  const pagesData = await pageRes.json();
 
   // null identifier
-  if (pageData.data?.page == null || pagesData.data.page.slength === 0) {
+  if (pagesData.data?.pages == null || pagesData.data.pages.length === 0) {
     return null;
   }
 
@@ -193,70 +199,72 @@ export async function getGlobalData() {
     },
     body: JSON.stringify({
       query: `
-            navigation {
-              data {
-                attributes {
+      query {
+        navigation {
+          data {
+            attributes {
+              title
+              slogan
+              blocks {
+                __typename
+                ... on ComponentUtilMenuItem {
                   title
-                  slogan
-                  blocks {
-                    __typename
-                    ... on ComponentUtilMenuItem {
-                      title
-                      href
-                    }
-                  }
-                  buttons {
+                  href
+                }
+              }
+              buttons {
+                title
+                ahref
+                isExternal
+                target
+                selectTheme
+              }
+            }
+          }
+        }
+        footer {
+          data {
+            attributes {
+              blocks {
+                __typename
+                ... on ComponentUtilFooterColumn {
+                  title
+                  description
+                  open
+                  link {
+                    href
                     title
-                    ahref
                     isExternal
                     target
-                    selectTheme
                   }
+                }
+                ... on ComponentUtilFooterSocialMedia {
+                  title
+                  open
+                  socialMedia {
+                    type
+                    title
+                    url
+                  }
+                }
+              }
+              subFooter {
+                title
+                link {
+                  href
+                  title
+                  isExternal
+                  target
                 }
               }
             }
-            footer {
-                data {
-                  attributes {
-                    blocks {
-                      __typename
-                      ... on ComponentUtilFooterColumn {
-                        title
-                        description
-                        open
-                        link {
-                            href
-                            title
-                            isExternal
-                            target
-                          }
-                      }
-                      ... on ComponentUtilFooterSocialMedia {
-                        title
-                        open
-                        socialMedia {
-                          type
-                          title
-                          url
-                        }
-                      }
-                    }
-                    subFooter {
-                      title
-                      link {
-                        href
-                        title
-                        isExternal
-                        target
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+          }
+        }
+      }
+      `,
     }),
   });
 
   const global = await globalRes.json();
-  return global.data.global;
+  return global.data;
 }
