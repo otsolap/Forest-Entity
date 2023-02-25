@@ -12,7 +12,9 @@
         "markdown",
         "image",
         "video"
-      ]
+      ],
+      "default": "markdown",
+      "required": true
     },
     "markdown": {
       "type": "richtext"
