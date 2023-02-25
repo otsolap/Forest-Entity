@@ -1,5 +1,5 @@
 import Error from "next/error";
-import { fetchAPI, getGlobalData, getPageData } from "@/utils/api";
+import { fetchAPI, getPageData } from "@/utils/api";
 import Blocks from "components/Blocks";
 import Meta from "components/Meta";
 import Layout from "@/components/Layout";
@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 // optional catch all routes feature. See the related docs:
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
 
-const DynamicPage = ({ blocks, meta, global, pageContext }) => {
+const DynamicPage = ({ blocks, meta, pageContext }) => {
   const router = useRouter();
 
   // check if the required data was provided
@@ -18,7 +18,7 @@ const DynamicPage = ({ blocks, meta, global, pageContext }) => {
   }
 
   return (
-    <Layout global={global} pageContext={pageContext}>
+    <Layout pageContext={pageContext}>
       <Blocks blocks={blocks} />
     </Layout>
   );
@@ -45,7 +45,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { params } = context;
-  const global = await getGlobalData();
   // fetch Pages
   const pageData = await getPageData({
    /*  slug: (!params.slug ? [""] : params.slug).join("/") */
@@ -64,10 +63,10 @@ export async function getStaticProps(context) {
     slug,
   }
 
+
   return {
     props: {
         blocks: blocks,
-        global: global.data,
         pageContext: {
             ...pageContext,
         }
