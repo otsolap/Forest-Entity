@@ -1,17 +1,22 @@
-import FooterColumn from "@/partials/FooterColumn";
-import FooterSocialMedia from "@/partials/FooterSocialMedia";
+import Blocks from "components/Blocks";
+import CustomLink from 'partials/CustomLink'
 
 const Footer = ({ footer }) => {
-  console.log(footer.data.attributes)
+  const global = footer.data.attributes
+  console.log(global)
   return (
-
     <>
       <footer className="test">
-        <div className="test">
-            Footer Columns x2 here + 1 social media
-        </div>
+        {global.blocks.length ? (
+          <div className="test">
+              <Blocks blocks={global.blocks} />
+          </div>
+        ) : null}
         <div className="subFooter">
-            subfooter here
+            {global.subFooter.title} &#169; {new Date().getFullYear()} &#124;
+            {global.subFooter.link ?  (
+              <CustomLink link={global.subFooter.link} />
+            ): null}
         </div>
       </footer>
     </>

@@ -1,0 +1,31 @@
+// Border shortcut
+@mixin border($size) {
+	-webkit-border: $size;
+	-moz-border: $size;
+	-ms-border: $size;
+	border: $size;
+}
+
+// Border-radius shortcuts
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+}
+
+// Flexbox display
+@mixin display-flex() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex-direction($direction) {
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	flex-direction: $direction;
+}

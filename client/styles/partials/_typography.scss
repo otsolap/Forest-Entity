@@ -1,0 +1,63 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bitter", serif;
+  margin-bottom: $single;
+}
+
+h1 {
+  font-size: $double;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: $single;
+}
+
+p {
+  margin-bottom: $single;
+}
+
+a,
+p,
+input,
+span,
+button,
+strong,
+small {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration-line: none;
+  font-weight: 700;
+}
+
+@media (width >= $container-desktop) {
+  h1,
+  .h1 {
+    font-size: 2.5rem;
+  }
+  h2,
+  .h2 {
+    font-size: $double;
+  }
+  h3,
+  .h3 {
+    font-size: 1.5rem;
+  }
+  h4,
+  .h4 {
+    font-size: 1.25rem;
+  }
+}

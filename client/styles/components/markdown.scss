@@ -1,0 +1,51 @@
+// Markdown is wrapped in Article.
+// These styles are for Markdown content.
+.markdown {
+    article {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin-bottom: $single;
+  
+        strong {
+          color: $primary;
+        }
+      }
+  
+      p {
+        padding-bottom: $half;
+      }
+  
+      ul li {
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+      }
+  
+      img {
+        object-fit: contain;
+        object-position: 50% 50%;
+        height: fit-content;
+        width: 100%;
+        max-width: 350px;
+        max-height: 350px;
+        @include border-radius($single);
+      }
+  
+      a {
+        color: $primary;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+        word-break: break-word;
+  
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          text-underline-offset: $half;
+        }
+      }
+    }
+  }

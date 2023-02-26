@@ -1,0 +1,14 @@
+@import "breakpoints";
+@import "variables";
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+  .container {
+    max-width: $container-desktop;
+  }
+}
