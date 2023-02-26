@@ -1,6 +1,6 @@
 
 const Header= ({ navigation }) => {
-  console.log(navigation.data.attributes)
+  const data = navigation.data.attributes
   return (
     <>
       <header>

@@ -1,19 +1,14 @@
 import Error from "next/error";
 import { fetchAPI, getPageData } from "@/utils/api";
 import Blocks from "components/Blocks";
-import Meta from "components/Meta";
-import { useRouter } from "next/router";
-
 
 // The file is called [[...slug]].js because we're using Next's
 // optional catch all routes feature. See the related docs:
 // https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
 
-const DynamicPage = ({ blocks, meta, pageContext }) => {
-  const router = useRouter();
-
+const DynamicPage = ({ blocks }) => {
   // check if the required data was provided
-  if (!router.isFallback && !blocks?.length) {
+  if (!blocks?.length) {
     return <Error statusCode={404} />;
   }
 
@@ -22,40 +17,43 @@ const DynamicPage = ({ blocks, meta, pageContext }) => {
   );
 };
 
-// alternative from chatgpt:
 export async function getStaticPaths() {
   // Get all pages from Strapi
   const pages = await fetchAPI("/pages", {
     fields: ["slug"],
-  });
+  })
 
   const paths = pages.data.map((page) => {
     const { slug } = page.attributes;
     // Decompose the slug that was saved in Strapi
-    const slugArray = !slug ? false : slug.split("/");
-    return {
-      params: { slug: slugArray },
-    };
-  });
+    const slugArray = !slug ? false : slug.split("/")
+    return { 
+      params: { slug: slugArray } 
+    }
+  })
 
-  return { paths, fallback: true };
+  return { 
+    paths: paths, 
+    fallback: true
+  };
 } 
 
 export async function getStaticProps(context) {
-  const { params } = context;
+  const { slug } = context.params;
   // fetch Pages
   const pageData = await getPageData({
-   /*  slug: (!params.slug ? [""] : params.slug).join("/") */
-   slug: "/about"
-  });
-
+    // can we refactor this without resoorting to '/' + start?
+    // slugArray cuts out the / but we should try nested pages before refactor???
+    slug: '/' + (!slug ? [""] : slug).join("/")
+  })
+ 
   if (pageData == null) {
     // 404 if no props
-    return { props: {} };
+    return { props: {} }
   }
 
   // put the data to the components
-  const { blocks, slug} = pageData.attributes
+  const { blocks } = pageData.attributes
 
   return {
     props: {

@@ -208,6 +208,7 @@ export async function getGlobalData() {
               blocks {
                 __typename
                 ... on ComponentUtilMenuItem {
+                  id
                   title
                   href
                 }
@@ -229,6 +230,7 @@ export async function getGlobalData() {
                 __typename
                 ... on ComponentUtilFooterColumn {
                   title
+                  id
                   description
                   open
                   link {

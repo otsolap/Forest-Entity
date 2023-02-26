@@ -10,6 +10,16 @@ const CustomLink = ({ link }) => {
     )
   }
 
+  if(link.target === '_blank') {
+    return (
+      <Link href={link.href} passHref>
+        <a target="_blank">
+          {link.title}
+        </a>
+      </Link>
+    )
+  }
+
   return <Link href={link.href}>{link.title}</Link>;
 };
 
