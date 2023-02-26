@@ -1,4 +1,5 @@
 import Blocks from "components/Blocks";
+import styles from '@/styles/components/footer.module.scss'
 import CustomLink from 'partials/CustomLink'
 
 const Footer = ({ footer }) => {
@@ -6,14 +7,15 @@ const Footer = ({ footer }) => {
   console.log(global)
   return (
     <>
-      <footer className="test">
+      <footer className={styles.footer}>
         {global.blocks.length ? (
-          <div className="test">
+           <div className={styles.columnContainer}>
               <Blocks blocks={global.blocks} />
           </div>
         ) : null}
-        <div className="subFooter">
-            {global.subFooter.title} &#169; {new Date().getFullYear()} &#124;
+        <div className={styles.subFooter}>
+            <span>{global.subFooter.title} &#169; {new Date().getFullYear()}</span> 
+            &#124;
             {global.subFooter.link ?  (
               <CustomLink link={global.subFooter.link} />
             ): null}

@@ -1,7 +1,11 @@
-import Hero from "@/components/Blocks/Hero";
+import Hero from "@/components/blocks/Hero";
+import FooterColumn from "@/components/navigation/FooterColumn";
+import FooterSocialMedia from "@/components/navigation/FooterSocialMedia";
 
 const blocksComponents = {
   ComponentBlocksHero: Hero,
+  ComponentUtilFooterColumn: FooterColumn,
+  ComponentUtilFooterSocialMedia: FooterSocialMedia,
 };
 
 const Block = ({ blocksData }) => {
