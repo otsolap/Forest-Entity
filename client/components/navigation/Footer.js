@@ -2,8 +2,9 @@ import FooterColumn from "@/partials/FooterColumn";
 import FooterSocialMedia from "@/partials/FooterSocialMedia";
 
 const Footer = ({ footer }) => {
-  console.log(footer)
+  console.log(footer.data.attributes)
   return (
+
     <>
       <footer className="test">
         <div className="test">
