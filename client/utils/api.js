@@ -96,6 +96,16 @@ export async function getPageData({ slug }) {
                     data {
                       attributes {
                         title
+                        image {
+                          data {
+                            attributes {
+                              url
+                              width
+                              height
+                              alternativeText
+                            }
+                          }
+                        }
                         description
                         publishedAt
                         category {
@@ -122,6 +132,16 @@ export async function getPageData({ slug }) {
                     id
                     title
                     description
+                    image {
+                      data {
+                        attributes {
+                          url
+                          width
+                          height
+                          alternativeText
+                        }
+                      }
+                    }
                   }
                 }
                 ... on ComponentBlocksHero {
@@ -132,8 +152,15 @@ export async function getPageData({ slug }) {
                   video
                   autoplay
                   media
-                  Image {
-                    alt
+                  image {
+                    data {
+                      attributes {
+                        url
+                        width
+                        height
+                        alternativeText
+                      }
+                    }
                   }
                   buttons {
                     ahref
@@ -147,6 +174,16 @@ export async function getPageData({ slug }) {
                   title
                   description
                   id
+                  image {
+                    data {
+                      attributes {
+                        url
+                        width
+                        height
+                        alternativeText
+                      }
+                    }
+                  }
                   button {
                     ahref
                     title
@@ -158,9 +195,20 @@ export async function getPageData({ slug }) {
                 }
                 ... on ComponentBlocksMediaMix {
                   items {
+                    id
                     type
                     markdown
                     video
+                    image {
+                      data {
+                        attributes {
+                          url
+                          width
+                          height
+                          alternativeText
+                        }
+                      }
+                    }
                   }
                 }
                 ... on ComponentBlocksTextArea {
@@ -171,7 +219,7 @@ export async function getPageData({ slug }) {
             }
           }
         }
-      }             
+      }                 
       `,
       variables: { slug }
     }),
@@ -211,6 +259,16 @@ export async function getGlobalData() {
                   id
                   title
                   href
+                  icon {
+                    data {
+                      attributes {
+                        url
+                        width
+                        height
+                        alternativeText
+                      }
+                    }
+                  }
                 }
               }
               buttons {

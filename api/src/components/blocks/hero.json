@@ -38,17 +38,18 @@
       "type": "boolean",
       "default": false
     },
-    "Image": {
-      "displayName": "Image",
-      "type": "component",
-      "repeatable": false,
-      "component": "partials.image"
-    },
     "buttons": {
       "type": "component",
       "repeatable": true,
       "component": "partials.button",
       "max": 2
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

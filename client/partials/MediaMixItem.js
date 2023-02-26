@@ -1,6 +1,5 @@
 import styles from "@/styles/components/mediaMix.module.scss";
-import Image from "next/image";
-import Link from "next/link";
+import CustomImage from "@/partials/CustomImage";
 import MarkdownBlock from "@/partials/MarkdownBlock";
 import YoutubeEmbed from "@/partials/YoutubeEmbed";
 
@@ -14,14 +13,9 @@ const MediaMixItem = ({ type, image, video, markdown}) => {
       )}
       {type == "image" && image && (
         <figure className={styles.imageContainer}>
-          <Image
+          <CustomImage
+            image={image}
             className={styles.image}
-            src={image}
-            alt=""
-            fill
-            quality={100}
-            sizes="(max-width: 1024px) 100vw,
-            50vw"
           />
         </figure>
       )}

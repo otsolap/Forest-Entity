@@ -8,11 +8,6 @@
     "title": {
       "type": "string"
     },
-    "image": {
-      "type": "component",
-      "repeatable": false,
-      "component": "partials.image"
-    },
     "link": {
       "type": "component",
       "repeatable": false,

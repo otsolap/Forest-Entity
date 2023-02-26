@@ -46,7 +46,6 @@
     "blocks": {
       "type": "dynamiczone",
       "components": [
-        "partials.image",
         "partials.quote",
         "util.article-text-block",
         "util.youtube-embed"
