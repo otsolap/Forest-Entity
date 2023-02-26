@@ -1,11 +1,12 @@
 
 const Header= ({ navigation }) => {
+  console.log(navigation)
   return (
     <>
       <header>
-        <navigation>
+        <nav>
 
-        </navigation>
+        </nav>
       </header>
     </>
   );

@@ -2,7 +2,8 @@ import Footer from "./navigation/Footer";
 import Header from "./navigation/Header";
 
 export default function Layout({ children, global }) {
-  const { navigation, footer } = global.attributes;
+  console.log(global)
+  const { navigation, footer } = global
   return (
     <>
     <div className="layout">

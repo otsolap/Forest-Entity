@@ -2,8 +2,8 @@ import Error from "next/error";
 import { fetchAPI, getPageData } from "@/utils/api";
 import Blocks from "components/Blocks";
 import Meta from "components/Meta";
-import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
+
 
 // The file is called [[...slug]].js because we're using Next's
 // optional catch all routes feature. See the related docs:
@@ -18,9 +18,7 @@ const DynamicPage = ({ blocks, meta, pageContext }) => {
   }
 
   return (
-    <Layout pageContext={pageContext}>
       <Blocks blocks={blocks} />
-    </Layout>
   );
 };
 
@@ -59,17 +57,9 @@ export async function getStaticProps(context) {
   // put the data to the components
   const { blocks, slug} = pageData.attributes
 
-  const pageContext = {
-    slug,
-  }
-
-
   return {
     props: {
         blocks: blocks,
-        pageContext: {
-            ...pageContext,
-        }
     }
   }
 

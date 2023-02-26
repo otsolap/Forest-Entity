@@ -2,10 +2,11 @@ import FooterColumn from "@/partials/FooterColumn";
 import FooterSocialMedia from "@/partials/FooterSocialMedia";
 
 const Footer = ({ footer }) => {
+  console.log(footer)
   return (
     <>
-      <footer className={styles.footer}>
-        <div className={styles.columnContainer}>
+      <footer className="test">
+        <div className="test">
             Footer Columns x2 here + 1 social media
         </div>
         <div className="subFooter">
