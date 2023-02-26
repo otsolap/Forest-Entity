@@ -56,12 +56,8 @@ export async function getPageData({ slug }) {
     },
     body: JSON.stringify({
       query: `
-      query GetPages(
-        $slug: String!
-        ) {
-        pages(
-          filters: { slug: { eq: $slug } }
-          ) {
+      query GetPages($slug: String!) {
+        pages(filters: { slug: { eq: $slug } }) {
           data {
             id
             attributes {
@@ -84,6 +80,7 @@ export async function getPageData({ slug }) {
                   description
                   faqs {
                     data {
+                      id
                       attributes {
                         title
                         body
@@ -121,7 +118,8 @@ export async function getPageData({ slug }) {
                 ... on ComponentBlocksCards {
                   title
                   description
-                  Card {
+                  items {
+                    id
                     title
                     description
                   }
@@ -148,6 +146,7 @@ export async function getPageData({ slug }) {
                 ... on ComponentBlocksHighlight {
                   title
                   description
+                  id
                   button {
                     ahref
                     title
@@ -158,7 +157,7 @@ export async function getPageData({ slug }) {
                   selectTheme
                 }
                 ... on ComponentBlocksMediaMix {
-                  item {
+                  items {
                     type
                     markdown
                     video
@@ -166,12 +165,13 @@ export async function getPageData({ slug }) {
                 }
                 ... on ComponentBlocksTextArea {
                   text
+                  id
                 }
               }
             }
           }
         }
-      }
+      }             
       `,
       variables: { slug }
     }),

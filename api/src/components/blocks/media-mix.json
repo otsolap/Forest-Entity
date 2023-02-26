@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "item": {
+    "items": {
       "type": "component",
       "repeatable": true,
       "component": "partials.media-mix-item",

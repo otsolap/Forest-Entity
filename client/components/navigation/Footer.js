@@ -4,7 +4,6 @@ import CustomLink from 'partials/CustomLink'
 
 const Footer = ({ footer }) => {
   const global = footer.data.attributes
-  console.log(global)
   return (
     <>
       <footer className={styles.footer}>
