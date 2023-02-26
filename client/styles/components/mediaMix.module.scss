@@ -1,0 +1,91 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.mediaMix {
+  position: relative;
+}
+
+.mediaMix,
+.wrapper,
+.mediaMixColumn {
+  @include display-flex();
+  @include flex-direction(column);
+}
+
+.wrapper {
+  gap: $single;
+}
+
+.mediaMixColumn {
+  margin: auto;
+  padding-top: $half;
+  padding-bottom: $half;
+}
+
+.markdown {
+  padding-left: $single;
+  padding-right: $single;
+}
+
+.imageContainer,
+.videoContainer {
+  padding: $single;
+}
+
+.imageContainer,
+.videoContainer {
+  position: relative;
+  height: 325px;
+  width: 325px;
+}
+
+.videoContainer {
+  z-index: 30;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.buttonWrapper {
+  padding: 0 $single;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  width: fit-content;
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+
+  .wrapper {
+    @include flex-direction(row);
+  }
+
+  .mediaMixColumn {
+    max-width: calc($container-desktop / 2);
+    flex: 0 0 50%;
+  }
+
+  .videoContainer {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+  }
+
+  .imageContainer {
+    width: 720px;
+    height: 600px;
+  }
+
+  .buttonWrapper {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}

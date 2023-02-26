@@ -1,11 +1,17 @@
+import Cards from "@/components/blocks/Cards";
 import Hero from "@/components/blocks/Hero";
 import FooterColumn from "@/components/navigation/FooterColumn";
 import FooterSocialMedia from "@/components/navigation/FooterSocialMedia";
+import MediaMix from "@/components/blocks/MediaMix";
+import Textarea from "@/components/blocks/Textarea";
 
 const blocksComponents = {
+  ComponentBlocksCards: Cards,
   ComponentBlocksHero: Hero,
   ComponentUtilFooterColumn: FooterColumn,
   ComponentUtilFooterSocialMedia: FooterSocialMedia,
+  ComponentBlocksMediaMix: MediaMix,
+  ComponentBlocksTextArea: Textarea,
 };
 
 const Block = ({ blocksData }) => {

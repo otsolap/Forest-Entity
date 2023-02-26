@@ -1,0 +1,9 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.content {
+  @extend .container;
+  padding: $single;
+}

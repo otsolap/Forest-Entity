@@ -1,5 +1,6 @@
 const Hero = ({ data }) => {
-return (
+    const { Image, alignContent, autoplay, buttons, media, mediaWidth, title, video, description } = data
+    return (
     <div>
         Hello World
     </div>

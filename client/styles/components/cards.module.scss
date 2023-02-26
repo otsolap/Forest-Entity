@@ -1,0 +1,74 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.cards {
+  @extend .container;
+  padding: $single;
+}
+
+.header,
+.wrapper {
+  @include display-flex();
+  @include flex-direction(column);
+}
+
+.header {
+  gap: $single;
+  padding-bottom: $double;
+}
+
+.wrapper {
+  gap: $single;
+  flex-wrap: wrap;
+}
+
+.card {
+  @include display-flex();
+  @include flex-direction(column);
+  @include border-radius($single);
+  padding: $single;
+  width: 100%;
+  align-items: center;
+  background-color: $primary;
+}
+
+.imageContainer {
+  position: relative;
+  height: 75px;
+  width: 75px;
+  margin-top: $single;
+  margin-bottom: $double;
+}
+
+.image {
+  @include border-radius(100%);
+}
+
+.title {
+  padding-bottom: $single;
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+  .header {
+    max-width: calc($container-desktop / 2);
+    flex: 0 0 50%;
+  }
+
+  .cards {
+    padding-top: $double;
+    padding-bottom: $double;
+  }
+
+  .wrapper {
+    @include flex-direction(row);
+    gap: $double;
+  }
+
+  .card {
+    max-width: calc(100% / 3);
+    flex: 0 0 calc(33.333% - $double);
+  }
+}
