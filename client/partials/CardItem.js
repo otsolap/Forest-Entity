@@ -1,12 +1,12 @@
 import styles from "@/styles/components/cards.module.scss";
-import CustomImage from "@/partials/CustomImage";
+import NextImage from "@/partials/NextImage";
 
 const CardItem = ({ image, title, description, className }) => {
   return (
     <article className={`${styles.card} ${className ? className : null}`}>
       {image && (
         <figure className={styles.imageContainer}>
-          <CustomImage
+          <NextImage
             image={image}
             className={styles.image}
           />

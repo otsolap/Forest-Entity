@@ -1,7 +1,7 @@
 import { getStrapiMedia } from "utils/media";
 import Image from "next/image";
 
-const CustomImage = ({ image }) => {
+const NextImage = ({ image, className }) => {
   // null identifer
   if(image.data === null) {
     return
@@ -18,6 +18,7 @@ const CustomImage = ({ image }) => {
         height={height}
         priority
         quality={100}
+        className={className || ''}
       />
     )
   }
@@ -30,8 +31,9 @@ const CustomImage = ({ image }) => {
       fill
       priority
       sizes="100vw"
+      className={className || ''}
     />
   );
 };
 
-export default CustomImage;
+export default NextImage;

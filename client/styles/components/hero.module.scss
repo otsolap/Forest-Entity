@@ -1,0 +1,129 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.heroWrapper {
+  max-width: 100%;
+  position: relative;
+}
+
+.hero {
+  @extend .container;
+  position: relative;
+  margin: auto;
+  @include display-flex();
+  @include flex-direction(column);
+}
+
+.mediaContainer {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.video {
+  height: 400px;
+}
+
+.textWrapper {
+  height: 100%;
+  width: 100%;
+  @include display-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+.contentContainer {
+  width: 100%;
+  @include display-flex();
+  @include flex-direction(row);
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.content {
+  padding: $double;
+
+  h1 {
+    font-size: $triple;
+  }
+
+  h3 {
+    font-size: $single;
+    font-weight: 500;
+  }
+}
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+  .hero {
+    @include flex-direction(row);
+    position: relative;
+  }
+
+  .mediaContainer,
+  .contentContainer {
+    max-width: calc($container-desktop / 2);
+    flex: 0 0 50%;
+  }
+
+  .mediaContainer {
+    max-height: 625px;
+    border-bottom-right-radius: $single;
+  }
+
+  .contentContainer {
+    border-bottom-left-radius: $single;
+  }
+
+  .video {
+    height: 580px;
+    max-height: 580px;
+  }
+
+  .fullVideo {
+    position: absolute;
+    max-width: 1440px;
+    inset: 0;
+
+    .video {
+      height: 612px;
+      max-height: 612px;
+    }
+  }
+
+  .mediaFirst,
+  .contentFirst {
+    order: 1;
+  }
+
+  .mediaLast,
+  .contentLast {
+    order: 2;
+  }
+
+  .content {
+    padding: initial;
+    padding-right: $single;
+    min-height: 625px;
+
+    h1 {
+      padding-bottom: $double;
+      font-size: 3.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      padding-bottom: $double;
+    }
+  }
+}

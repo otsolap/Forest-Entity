@@ -163,7 +163,7 @@ export async function getPageData({ slug }) {
                     }
                   }
                   buttons {
-                    ahref
+                    href
                     title
                     isExternal
                     target
@@ -185,7 +185,7 @@ export async function getPageData({ slug }) {
                     }
                   }
                   button {
-                    ahref
+                    href
                     title
                     isExternal
                     target
@@ -273,7 +273,7 @@ export async function getGlobalData() {
               }
               buttons {
                 title
-                ahref
+                href
                 isExternal
                 target
                 selectTheme

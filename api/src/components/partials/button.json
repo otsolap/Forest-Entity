@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "ahref": {
+    "href": {
       "type": "text"
     },
     "title": {
