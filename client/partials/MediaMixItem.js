@@ -11,7 +11,7 @@ const MediaMixItem = ({ type, image, video, markdown}) => {
           <YoutubeEmbed src={video} />
         </div>
       ): null}
-      {type == "image" && image.data.length ? (
+      {type == "image" && image?.data.length ? (
         <figure className={styles.imageContainer}>
           <NextImage
             image={image}

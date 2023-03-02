@@ -1,0 +1,97 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+/** section **/
+
+.header {
+    padding-bottom: $double;
+}
+
+.header,
+.wrapper {
+    @include display-flex();
+    @include flex-direction(column);
+    gap: $single;
+    padding: $single;
+}
+
+.wrapper {
+    flex-wrap: wrap;
+}
+
+.linkWrapper {
+    padding-top: $single;
+    padding-bottom: single;
+    width: 100%;
+    @include display-flex;
+    justify-content: center;
+}
+
+/** item **/
+.blog {
+    @include display-flex();
+    @include flex-direction(column);
+    @include border-radius($single);
+    padding: $single;
+    background-color: $primary;
+    width: 100%;
+    align-items: center;
+}
+
+.imageContainer {
+    position: relative;
+    margin-top: $single;
+    margin-bottom: $single;
+    height: 200px;
+    width: 320px;
+}
+
+.image {
+    object-fit: cover;
+    object-position: 50% 50%;
+    @include border-radius($single);
+}
+
+.title {
+    padding-bottom: $single;
+    padding-left: $half;
+    padding-right: $half;
+    width: 100%;
+}
+  
+
+/* DESKTOP STYLES */
+@media (width >= $container-desktop) {
+    /** section **/
+    .section {
+        margin-bottom: $double;
+    }
+
+    .header {
+        max-width: calc($container-desktop / 2);
+        flex: 0 0 50%;
+    }
+
+    .wrapper {
+        @include flex-direction(row);
+        gap: $triple;
+        padding: initial;
+    }
+
+    .linkWrapper {
+        justify-content: flex-end;
+    }
+
+     /** item **/
+    .blog {
+        max-width: calc(100% / 3);
+        flex: 0 0 calc(33.333% - $double);
+    }
+
+    .imageContainer {
+        height: 200px;
+        width: 370px;
+    }
+}

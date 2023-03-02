@@ -228,7 +228,7 @@ export async function getPageData({ slug }) {
   const pagesData = await pageRes.json();
 
   // null identifier
-  if (pagesData.data?.pages == null || pagesData.data.pages.length === 0) {
+  if (pagesData.data?.pages == null || pagesData.data?.pages.length === 0) {
     return null;
   }
 

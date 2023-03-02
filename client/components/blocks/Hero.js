@@ -16,7 +16,7 @@ const Hero = ({ data }) => {
           ${media == "video" && mediaWidth ? styles.fullVideo : ""} 
           `}
         >
-          {media == "image" && image.data.length ? (
+          {media == "image" && image.data?.length ? (
             <>
               {mediaWidth ? (
                 <NextImage

@@ -4,7 +4,7 @@ import NextImage from "@/partials/NextImage";
 const CardItem = ({ image, title, description, className }) => {
   return (
     <article className={`${styles.card} ${className ? className : null}`}>
-      {image.data.length ? (
+      {image.data?.length ? (
         <figure className={styles.imageContainer}>
           <NextImage
             image={image}

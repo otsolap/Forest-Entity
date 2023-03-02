@@ -1,4 +1,4 @@
-import BlogSection from "./blocks/BlogSection";
+import BlogSection from "@/components/blocks/BlogSection";
 import Cards from "@/components/blocks/Cards";
 import Hero from "@/components/blocks/Hero";
 import FooterColumn from "@/components/navigation/FooterColumn";

@@ -1,10 +1,10 @@
-import styles from "@/styles/components/blogItem.module.scss";
+import styles from "@/styles/components/blog.module.scss";
 import NextImage from "@/partials/NextImage";
 
 const BlogItem = ({ image, title, description, categories, publishedAt }) => {
   return (
-    <article className={styles.card}>
-        {image.data.length ? (
+    <article className={styles.blog}>
+        {image.data?.length ? (
             <figure className={styles.imageContainer}>
               <NextImage
                   image={image}
