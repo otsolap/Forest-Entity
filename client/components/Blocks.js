@@ -1,3 +1,4 @@
+import BlogSection from "./blocks/BlogSection";
 import Cards from "@/components/blocks/Cards";
 import Hero from "@/components/blocks/Hero";
 import FooterColumn from "@/components/navigation/FooterColumn";
@@ -6,6 +7,7 @@ import MediaMix from "@/components/blocks/MediaMix";
 import Textarea from "@/components/blocks/Textarea";
 
 const blocksComponents = {
+  ComponentBlocksBlogs: BlogSection,
   ComponentBlocksCards: Cards,
   ComponentBlocksHero: Hero,
   ComponentUtilFooterColumn: FooterColumn,

@@ -92,7 +92,7 @@ export async function getPageData({ slug }) {
                   title
                   description
                   filter
-                  articles {
+                  items {
                     data {
                       attributes {
                         title
