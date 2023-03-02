@@ -11,7 +11,7 @@ const Footer = ({ footer }) => {
            <div className={styles.columnContainer}>
               <Blocks blocks={global.blocks} />
           </div>
-        ) : null}
+        ): null}
         <div className={styles.subFooter}>
             <span>{global.subFooter.title} &#169; {new Date().getFullYear()}</span> 
             &#124;
