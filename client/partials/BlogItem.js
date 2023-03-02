@@ -1,7 +1,7 @@
 import styles from "@/styles/components/blogItem.module.scss";
 import NextImage from "@/partials/NextImage";
 
-const BlogItem = ({ image, title, description, category, publishedAt }) => {
+const BlogItem = ({ image, title, description, categories, publishedAt }) => {
   return (
     <article className={styles.card}>
         {image && (
@@ -14,18 +14,14 @@ const BlogItem = ({ image, title, description, category, publishedAt }) => {
         )}
         {title && <h3 className={styles.title}>{title}</h3>}
         {description && <p>{description}</p>}
-        <footer>
-        {categories ? (
-          <>
-          {categories.data.map((item, i) => {
-            return (
-              <h4 key={i} className={styles.category}>{item.attributes.title}</h4>
-            )
-          })}
-          </>
+        {categories.data || publishedAt ? (
+          <footer className={styles.footer}>
+            {categories.data &&
+              <h4 className={styles.category}>{categories.data.attributes.title}</h4>
+            }
+          {publishedAt && <p>{publishedAt}</p>}
+          </footer>
         ): null}
-        {publishedAt && <p>{publishedAt}</p>}
-        </footer>
     </article>
   );
 };

@@ -12,7 +12,7 @@ const BlogSection = ({ data }) => {
             {description && <p>{description}</p>}
           </header>
         ): null}
-        {blogs ? (
+        {blogs.data ? (
           <div className={styles.wrapper}>
             {blogs.data.map((item, i) => {
               return (
@@ -21,7 +21,7 @@ const BlogSection = ({ data }) => {
                   image={item.attributes.image}
                   title={item.attributes.title}
                   description={item.attributes.description}
-                  category={item.attributes.category}
+                  categories={item.attributes.categories}
                   publishedAt={item.attributes.publishedAt}
                 />
               );
