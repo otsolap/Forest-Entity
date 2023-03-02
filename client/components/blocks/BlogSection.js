@@ -2,7 +2,7 @@ import styles from "@/styles/components/blogSection.module.scss";
 import BlogItem from "partials/BlogItem";
 
 const BlogSection = ({ data }) => {
-  const { title, description, filter, items } = data
+  const { title, description, filter, blogs } = data
   return (
       <section className={`${styles.cards}`}>
         {title && (
@@ -11,9 +11,9 @@ const BlogSection = ({ data }) => {
             {description && <p>{description}</p>}
           </header>
         )}
-        {items && (
+        {blogs && (
           <div className={styles.wrapper}>
-            {items.map((item, i) => {
+            {blogs.data.map((item, i) => {
               return (
                 <BlogItem
                   key={i}

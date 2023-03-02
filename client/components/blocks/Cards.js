@@ -2,7 +2,7 @@ import styles from "@/styles/components/cards.module.scss";
 import CardItem from "@/partials/CardItem";
 
 const Cards = ({ data }) => {
-  const { title, description, items } = data
+  const { title, description, cards } = data
   return (
       <section className={`${styles.cards}`}>
         {title && (
@@ -11,9 +11,9 @@ const Cards = ({ data }) => {
             {description && <p>{description}</p>}
           </header>
         )}
-        {items && (
+        {cards && (
           <div className={styles.wrapper}>
-            {items.map((item, i) => {
+            {cards.map((item, i) => {
               return (
                 <CardItem
                   key={i}

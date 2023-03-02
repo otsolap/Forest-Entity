@@ -92,7 +92,7 @@ export async function getPageData({ slug }) {
                   title
                   description
                   filter
-                  items {
+                  blogs: items {
                     data {
                       attributes {
                         title
@@ -128,7 +128,7 @@ export async function getPageData({ slug }) {
                 ... on ComponentBlocksCards {
                   title
                   description
-                  items {
+                  cards: items {
                     id
                     title
                     description
@@ -194,7 +194,7 @@ export async function getPageData({ slug }) {
                   selectTheme
                 }
                 ... on ComponentBlocksMediaMix {
-                  items {
+                  mediaMixColumns: items {
                     id
                     type
                     markdown
@@ -219,7 +219,7 @@ export async function getPageData({ slug }) {
             }
           }
         }
-      }                 
+      }
       `,
       variables: { slug }
     }),
