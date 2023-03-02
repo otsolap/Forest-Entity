@@ -1,11 +1,9 @@
 import styles from "@/styles/components/blogItem.module.scss";
 import NextImage from "@/partials/NextImage";
-import CustomLink from "./CustomLink";
 
-const BlogItem = ({ image, title, description, category, publishedAt, link  }) => {
+const BlogItem = ({ image, title, description, category, publishedAt }) => {
   return (
     <article className={styles.card}>
-        <CustomLink link={link}>
         {image && (
             <figure className={styles.imageContainer}>
             <NextImage
@@ -17,10 +15,17 @@ const BlogItem = ({ image, title, description, category, publishedAt, link  }) =
         {title && <h3 className={styles.title}>{title}</h3>}
         {description && <p>{description}</p>}
         <footer>
-        {category && <h4 className={styles.category}>{category}</h4>}
+        {categories ? (
+          <>
+          {categories.data.map((item, i) => {
+            return (
+              <h4 key={i} className={styles.category}>{item.attributes.title}</h4>
+            )
+          })}
+          </>
+        ): null}
         {publishedAt && <p>{publishedAt}</p>}
         </footer>
-        </CustomLink>
     </article>
   );
 };

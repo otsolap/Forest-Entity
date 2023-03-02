@@ -33,7 +33,7 @@
       "target": "api::author.author",
       "inversedBy": "article"
     },
-    "category": {
+    "categories": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category",

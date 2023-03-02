@@ -108,7 +108,7 @@ export async function getPageData({ slug }) {
                         }
                         description
                         publishedAt
-                        category {
+                        categories {
                           data {
                             attributes {
                               title

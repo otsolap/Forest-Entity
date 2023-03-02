@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const CustomLink = ({ link, className }) => {
   // null identifier
-  if(link.href === null) {
+  if(link.href === null || link.href === undefined || link.href.length === 0) {
     return
   }
 
