@@ -28,7 +28,7 @@
       ],
       "default": "latest"
     },
-    "articles": {
+    "items": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
