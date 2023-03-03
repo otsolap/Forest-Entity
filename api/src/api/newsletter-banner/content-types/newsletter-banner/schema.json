@@ -14,7 +14,7 @@
     "banner": {
       "type": "component",
       "repeatable": false,
-      "component": "blocks.highlight"
+      "component": "blocks.banner"
     }
   }
 }

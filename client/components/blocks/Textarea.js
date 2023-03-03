@@ -4,9 +4,11 @@ import MarkdownBlock from "@/partials/MarkdownBlock";
 const Textarea = ({ data }) => {
   const { text} = data
   return (
+      text ? (
       <section className={styles.content}>
-        {text ? ( <MarkdownBlock markdown={text} /> ) : null}
+         <MarkdownBlock markdown={text} /> 
       </section>
+      ) : null
   );
 };
 

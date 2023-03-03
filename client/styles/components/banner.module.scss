@@ -1,0 +1,47 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.banner {
+    @include display-flex();
+    @include flex-direction(column);
+    
+}
+
+.imageContainer {
+    position: relative;
+    padding-top: $single;
+    padding-bottom: $single;
+}
+
+.imageContainer {
+    margin: 0 auto;
+}
+
+.content {
+    text-align: center;
+    padding-bottom: $single;
+}
+
+.title {
+    color: $tertiary;
+}
+
+.image {
+    @include border-radius(100%);
+  }
+  
+.buttonWrapper {
+    padding-top: $single;
+    padding-bottom: $double;
+    margin: 0 auto;
+}
+
+@media (width >= $container-desktop) {
+
+    .imageContainer {
+        padding-top: $double;
+    }
+
+}

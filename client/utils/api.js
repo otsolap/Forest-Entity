@@ -170,7 +170,7 @@ export async function getPageData({ slug }) {
                     selectTheme
                   }
                 }
-                ... on ComponentBlocksHighlight {
+                ... on ComponentBlocksBanner {
                   title
                   description
                   id
