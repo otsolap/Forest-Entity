@@ -3,6 +3,7 @@ import CardItem from "@/partials/CardItem";
 
 const Cards = ({ data }) => {
   const { title, description, cards } = data
+  terve teppo!!!!
   return (
       <section className={`${styles.cards}`}>
         {title && (
