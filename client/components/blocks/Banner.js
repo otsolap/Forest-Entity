@@ -8,7 +8,7 @@ const Banner = ({ data }) => {
   const { title, description, image, button } = data
   return (
       <section className={styles.highlight}>
-        {image.data?.length ? (
+        {image.data ? (
           <figure className={styles.imageContainer}>
             <NextImage
               className={styles.image}

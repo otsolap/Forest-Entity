@@ -16,7 +16,7 @@ const Hero = ({ data }) => {
           ${media == "video" && mediaWidth ? styles.fullVideo : ""} 
           `}
         >
-          {media == "image" && image.data?.length ? (
+          {media == "image" && image.data ? (
             <>
               {mediaWidth ? (
                 <NextImage
@@ -36,7 +36,7 @@ const Hero = ({ data }) => {
               )}
             </>
           ): null}
-          {media == "video" && hero.video.length ? (
+          {media == "video" && hero.video ? (
             <>
               <YoutubeEmbed
                 autoplay={hero.autoplay ? hero.autoplay : null}

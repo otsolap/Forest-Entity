@@ -4,7 +4,7 @@ import NextImage from "@/partials/NextImage";
 const BlogItem = ({ image, title, description, categories, publishedAt }) => {
   return (
     <article className={styles.blog}>
-        {image.data?.length ? (
+        {image.data ? (
             <figure className={styles.imageContainer}>
               <NextImage
                   image={image}
