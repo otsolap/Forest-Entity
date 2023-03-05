@@ -25,7 +25,7 @@ const CustomLink = ({ link, className }) => {
     )
   }
 
-  return <Link href={link.href}>{link.title}</Link>;
+  return <Link href={link.href} className={className || ''} >{link.title}</Link>;
 };
 
 export default CustomLink;

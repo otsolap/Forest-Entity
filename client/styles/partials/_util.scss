@@ -6,6 +6,17 @@
   width: 100%;
 }
 
+.bg-primary {
+  background-color: $primary;
+  color: $white;
+}
+
+.bg-secondary {
+  background-color: $secondary;
+  color: $white;
+}
+
+
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
   .container {

@@ -36,12 +36,12 @@ const Hero = ({ data }) => {
               )}
             </>
           ): null}
-          {media == "video" && hero.video ? (
+          {media == "video" && video ? (
             <>
               <YoutubeEmbed
-                autoplay={hero.autoplay ? hero.autoplay : null}
+                autoplay={autoplay ? autoplay : null}
                 className={styles.video}
-                image={hero.video}
+                image={video}
               />
             </>
           ): null}
@@ -49,7 +49,6 @@ const Hero = ({ data }) => {
         <div
           className={`
           ${styles.contentContainer} 
-          ${mediaWidth ? styles.bgTransparent : styles.bgDefault}
           ${alignContent == "left" ? styles.contentFirst : styles.contentLast} 
         `}
         >
@@ -59,7 +58,7 @@ const Hero = ({ data }) => {
             {buttons && (
               <div className={styles.buttonWrapper}>
                 {buttons.map((button, i) => (
-                  <CustomLink link={button} key={i} className={`btn`} />
+                  <CustomLink link={button} key={i} className={`button button--${button.selectTheme}`} />
                 ))}
               </div>
             )}

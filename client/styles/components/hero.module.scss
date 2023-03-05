@@ -63,6 +63,13 @@
   }
 }
 
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
   .hero {
@@ -126,4 +133,9 @@
       padding-bottom: $double;
     }
   }
+
+  .buttonWrapper {
+    flex-direction: row;
+  }
+
 }

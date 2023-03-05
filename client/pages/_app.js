@@ -6,6 +6,7 @@ export const GlobalContext = createContext({});
 import Layout from "@/components/Layout";
 import { getGlobalData } from "utils/api";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }) {
   // extracting necessary data
