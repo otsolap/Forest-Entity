@@ -3,12 +3,9 @@
 @import "../partials/breakpoints";
 @import "../partials/util";
 
-.heroWrapper {
-  max-width: 100%;
-  position: relative;
-}
-
 .hero {
+  background-color: $primary;
+  color: $white;
   @extend .container;
   position: relative;
   margin: auto;
@@ -20,11 +17,6 @@
   width: 100%;
   max-height: 400px;
   overflow: hidden;
-}
-
-.image {
-  object-fit: cover;
-  object-position: center;
 }
 
 .video {
@@ -65,13 +57,14 @@
 
 .buttonWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 /* DESKTOP STYLES */
 @media (width >= $container-desktop) {
+
   .hero {
     @include flex-direction(row);
     position: relative;
@@ -85,11 +78,11 @@
 
   .mediaContainer {
     max-height: 625px;
-    border-bottom-right-radius: $single;
+    max-width: 720px;
   }
 
   .contentContainer {
-    border-bottom-left-radius: $single;
+    max-width: 720px;
   }
 
   .video {
@@ -133,9 +126,4 @@
       padding-bottom: $double;
     }
   }
-
-  .buttonWrapper {
-    flex-direction: row;
-  }
-
 }

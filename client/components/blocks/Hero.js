@@ -39,9 +39,9 @@ const Hero = ({ data }) => {
           {media == "video" && video ? (
             <>
               <YoutubeEmbed
-                autoplay={autoplay ? autoplay : null}
+                autoplay={autoplay}
                 className={styles.video}
-                image={video}
+                src={video}
               />
             </>
           ): null}
