@@ -1,0 +1,111 @@
+@import "../partials/mixins";
+@import "../partials/variables";
+@import "../partials/breakpoints";
+@import "../partials/util";
+
+.accordion {
+  @extend .container;
+  padding-bottom: $single;
+}
+
+.container {
+  padding: $single;
+  position: relative;
+  @include display-flex;
+  @include flex-direction(column);
+}
+
+.imgContainer {
+  display: none;
+}
+
+.content {
+  max-width: 100%;
+  width: 100%;
+  @include border(2px solid);
+  border-color: transparent;
+  @include border-radius(0.375rem);
+  @include display-flex;
+  @include flex-direction(column);
+  justify-content: flex-start;
+}
+
+.button {
+  background-color: $primary;
+  @include border(1px solid);
+  border-color: $white;
+}
+
+.item {
+  text-align: left;
+  width: 100%;
+  min-height: 10px;
+  @include border(1px solid);
+  border-color: $primary;
+}
+
+.flexBox {
+  @include display-flex;
+  align-items: center;
+  background-color: $primary;
+}
+
+.heading {
+  color: $white;
+  font-weight: 700;
+  margin-left: $single;
+  padding-top: $single;
+  padding-bottom: $single;
+}
+
+.icon {
+  background-image: none;
+  @include border(0px solid);
+  cursor: pointer;
+  margin-right: $single;
+  margin-left: auto;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  background-color: $primary;
+  color: $white;
+}
+
+.divider {
+  border-color: $white;
+  border-top-width: 2px;
+}
+
+.answer {
+  transition: max-height 0.6s ease;
+  max-height: 0;
+  overflow: hidden;
+  background-color: $gray;
+}
+
+.text {
+  padding: $single 0.5rem;
+}
+
+/* DESKTOP STYLES */
+@media (min-width: $container-desktop) {
+  .accordion {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .imgContainer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .imgContainer,
+  .content {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}

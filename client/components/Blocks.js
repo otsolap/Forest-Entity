@@ -1,13 +1,15 @@
+import Accordion from "@/components/blocks/Accordion";
 import Banner from "@/components/blocks/Banner";
 import BlogSection from "@/components/blocks/BlogSection";
 import Cards from "@/components/blocks/Cards";
 import Hero from "@/components/blocks/Hero";
-import FooterColumn from "@/components/navigation/FooterColumn";
-import FooterSocialMedia from "@/components/navigation/FooterSocialMedia";
+import FooterColumn from "@/partials/FooterColumn";
+import FooterSocialMedia from "@/partials/FooterSocialMedia";
 import MediaMix from "@/components/blocks/MediaMix";
 import Textarea from "@/components/blocks/Textarea";
 
 const blocksComponents = {
+  ComponentBlocksAccordion: Accordion,
   ComponentBlocksBanner: Banner,
   ComponentBlocksBlogs: BlogSection,
   ComponentBlocksCards: Cards,

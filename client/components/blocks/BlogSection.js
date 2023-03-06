@@ -6,7 +6,7 @@ const BlogSection = ({ data }) => {
   const { title, description, filter, blogs, link } = data
   return (
       <section className={`${styles.section}`}>
-        {title ? (
+        {title || description ? (
           <header className={styles.header}>
             {title && <h2>{title}</h2>}
             {description && <p>{description}</p>}

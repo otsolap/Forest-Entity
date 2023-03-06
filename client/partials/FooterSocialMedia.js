@@ -21,7 +21,7 @@ const FooterSocialMedia = ({  data }) => {
 
     return (
         <div key={id} className={styles.column}>
-            <button className={styles.button} onClick={toggleAccordion}>
+        <div role="button" className={styles.button} onClick={toggleAccordion}>
                 <div className={styles.wrapper}>
                     <div className={active ? `${styles.open}` : `${styles.closed}`}>
                         <div className={styles.flexBox}>
@@ -35,7 +35,7 @@ const FooterSocialMedia = ({  data }) => {
                         <ContactDetails list={socialMedia} />
                     </div>
                 </div>
-            </button>
+            </div>
         </div>
     )
 }

@@ -17,6 +17,10 @@
     },
     "body": {
       "type": "richtext"
+    },
+    "open": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

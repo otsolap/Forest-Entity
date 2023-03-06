@@ -6,12 +6,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -20,10 +14,13 @@
         "images"
       ]
     },
-    "faqs": {
+    "items": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

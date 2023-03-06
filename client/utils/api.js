@@ -76,14 +76,23 @@ export async function getPageData({ slug }) {
               blocks {
                 __typename
                 ... on ComponentBlocksAccordion {
-                  title
-                  description
-                  faqs {
+                  image {
+                    data {
+                      attributes {
+                        url
+                        width
+                        height
+                        alternativeText
+                      }
+                    }
+                  }
+                  faqs: items {
                     data {
                       id
                       attributes {
                         title
                         body
+                        open
                       }
                     }
                   }
