@@ -20,8 +20,6 @@
 
 .mediaMixColumn {
   margin: auto;
-  padding-top: $half;
-  padding-bottom: $half;
 }
 
 .markdown {
@@ -31,24 +29,24 @@
 
 .imageContainer,
 .videoContainer {
-  padding: $single;
-}
-
-.imageContainer,
-.videoContainer {
   position: relative;
-  height: 325px;
-  width: 325px;
+  padding: $single;
+  min-height: 325px;
 }
 
-.videoContainer {
-  z-index: 30;
+.imageContainer {
+  width: 100vw;
 }
 
 .image {
   object-fit: cover;
   width: inherit;
   height: inherit;
+}
+
+.videoContainer {
+  z-index: 30;
+  max-width: 325px;
 }
 
 .buttonWrapper {
@@ -74,14 +72,14 @@
   }
 
   .videoContainer {
-    height: 500px;
-    width: 500px;
+    min-height: 500px;
+    max-width: 500px;
     margin: auto;
   }
 
   .imageContainer {
-    width: 720px;
-    height: 600px;
+    min-height: 500px;
+    max-width: 720px;
   }
 
   .buttonWrapper {

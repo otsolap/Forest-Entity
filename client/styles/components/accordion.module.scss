@@ -19,6 +19,12 @@
   display: none;
 }
 
+.image {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
+
 .content {
   max-width: 100%;
   width: 100%;

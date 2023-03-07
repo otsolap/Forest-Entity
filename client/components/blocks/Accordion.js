@@ -9,7 +9,7 @@ const Accordion = ({data}) => {
       <div className={styles.container}>
           {image && (
             <figure className={styles.imgContainer}>
-              <NextImage image={image} />
+              <NextImage className={styles.image} image={image} />
             </figure>
           )}
           {faqs.data && (

@@ -5,13 +5,11 @@ export default function Layout({ children, global }) {
   const { navigation, footer } = global
   return (
     <>
-    <div className="layout">
-        <Header navigation={navigation} />
-          <main className="content">
-            {children}
-          </main>
-        <Footer footer={footer} />
-    </div>
+      <Header navigation={navigation} />
+        <main className="container">
+          {children}
+        </main>
+      <Footer footer={footer} />
     </>
   );
 }
