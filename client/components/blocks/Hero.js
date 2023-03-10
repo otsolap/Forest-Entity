@@ -4,8 +4,21 @@ import CustomLink from "@/partials/CustomLink";
 import styles from "@/styles/components/hero.module.scss";
 import YoutubeEmbed from "@/partials/YoutubeEmbed";
 
-const Hero = ({ data }) => {
-    const { image, alignContent, autoplay, buttons, media, mediaWidth, title, video, description } = data
+/**
+ * 
+ * @param image
+ * @param buttons
+ * @returns 
+ */
+const Hero = ({ alignContent, autoplay,  media, mediaWidth, title, video, description }) => {
+  console.log('hello from hero.js')
+  console.log('mediaWidth: ' + mediaWidth)
+  console.log('media: ' + media)
+  console.log('video: ' + video)
+  console.log('title: ' + title)
+  console.log('description: ' + description)
+  const image = [];
+  const buttons = [];
 
   return (
       <section className={styles.hero}>

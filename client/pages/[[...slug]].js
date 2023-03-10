@@ -1,66 +1,33 @@
-import Error from "next/error";
-import { fetchAPI, getPageData } from "@/utils/api";
+import { getDataDependencies } from "../utils/api";
+import {  getData } from "../utils/index";
 import Blocks from "components/Blocks";
 
-// The file is called [[...slug]].js because we're using Next's
-// optional catch all routes feature. See the related docs:
-// https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
-
-const DynamicPage = ({ blocks }) => {
-  // check if the required data was provided
-  if (!blocks?.length) {
-    return <Error statusCode={404} />;
-  }
-
+const Pages = ({ pageData }) => {
+  const blocks = pageData.blocks ?? [];
   return (
-      <Blocks blocks={blocks} />
-  );
+    <Blocks blocks={blocks} />
+);
 };
 
-export async function getStaticPaths() {
-  // Get all pages from Strapi
-  const pages = await fetchAPI("/pages", {
-    fields: ["slug"],
-  })
+export async function getServerSideProps(context) {
+  const { slug } = context.query;
+  try {
+    const data = getData(slug);
+    const res = await fetch(data.data);
+    const json = await res.json();
 
-  const paths = pages.data.map((page) => {
-    const { slug } = page.attributes;
-    // Decompose the slug that was saved in Strapi
-    const slugArray = !slug ? false : slug.split("/")
-    return { 
-      params: { slug: slugArray } 
+    if (!json.data.length) {
+      console.log(`No page found for slug: ${slug}`);
     }
-  })
-
-  return { 
-    paths: paths, 
-    fallback: true
-  };
-} 
-
-export async function getStaticProps(context) {
-  const { slug } = context.params;
-  // fetch Pages
-  const pageData = await getPageData({
-    // can we refactor this without resoorting to '/' + start?
-    // slugArray cuts out the / but we should try nested pages before refactor???
-    slug: '/' + (!slug ? [""] : slug).join("/")
-  })
- 
-  if (pageData == null) {
-    // 404 if no props
-    return { props: {} }
-  }
-
-  // put the data to the components
-  const { blocks } = pageData.attributes
-
-  return {
-    props: {
-        blocks: blocks,
-    }
-  }
-
+    
+    const pageData = await getDataDependencies(json.data[0]?.attributes?.blocks ?? {});
+    
+    return {
+      props: { pageData },
+    };
+  } catch (error) {
+    console.log('Error: ' + error)
+   }
 }
 
-export default DynamicPage;
+export default Pages;

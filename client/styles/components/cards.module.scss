@@ -34,6 +34,14 @@
   background-color: $primary;
 }
 
+.body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
 .imageContainer {
   position: relative;
   height: 75px;

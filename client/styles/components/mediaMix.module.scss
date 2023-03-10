@@ -18,10 +18,6 @@
   gap: $single;
 }
 
-.mediaMixColumn {
-  margin: auto;
-}
-
 .markdown {
   padding-left: $single;
   padding-right: $single;
@@ -35,13 +31,13 @@
 }
 
 .imageContainer {
-  width: 100vw;
+  width: 100%;
 }
 
 .image {
   object-fit: cover;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
 }
 
 .videoContainer {
@@ -64,10 +60,11 @@
 
   .wrapper {
     @include flex-direction(row);
+    gap: initial;
   }
 
   .mediaMixColumn {
-    max-width: calc($container-desktop / 2);
+    max-width: 50%;
     flex: 0 0 50%;
   }
 
@@ -78,8 +75,8 @@
   }
 
   .imageContainer {
-    min-height: 500px;
-    max-width: 720px;
+    height: 100%;
+    width: 100%;
   }
 
   .buttonWrapper {

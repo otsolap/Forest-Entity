@@ -200,7 +200,6 @@
 
   .columnContainer {
     @include flex-direction(row);
-    gap: $double;
     max-width: $container-desktop;
   }
 

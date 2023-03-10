@@ -9,7 +9,7 @@ const CustomLink = ({ link, className }) => {
   // use anchor fo external links
   if (link.isExternal) {
     return (
-      <a href={link.href} className={className || ''} target="_blank">
+      <a href={link.href} className={className || ''} target="_blank" rel="noreferrer">
         {link.title}
       </a>
     )

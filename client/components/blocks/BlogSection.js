@@ -12,7 +12,7 @@ const BlogSection = ({ data }) => {
             {description && <p>{description}</p>}
           </header>
         ): null}
-        {blogs.data?.length ? (
+        {blogs.data.length ? (
           <div className={styles.wrapper}>
             {blogs.data.map((item, i) => {
               return (
