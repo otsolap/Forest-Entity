@@ -14,7 +14,7 @@
         "images"
       ]
     },
-    "items": {
+    "accordions": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::faq.faq"

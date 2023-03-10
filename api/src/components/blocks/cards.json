@@ -12,7 +12,7 @@
     "description": {
       "type": "text"
     },
-    "items": {
+    "cards": {
       "displayName": "Card",
       "type": "component",
       "repeatable": true,
