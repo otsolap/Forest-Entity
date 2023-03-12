@@ -1,8 +1,7 @@
 import styles from "@/styles/components/cards.module.scss";
 import CardItem from "@/partials/CardItem";
 
-const Cards = ({ data }) => {
-  const { title, description, cards } = data
+const Cards = ({ title, description, cards }) => {
   return (
       <section className={`${styles.cards}`}>
         {title && (

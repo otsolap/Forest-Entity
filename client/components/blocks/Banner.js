@@ -3,8 +3,7 @@ import MarkdownBlock from "@/partials/MarkdownBlock";
 import NextImage from "@/partials/NextImage";
 import CustomLink from "@/partials/CustomLink";
 
-const Banner = ({ data }) => {
-  const { title, description, image, button, selectTheme } = data
+const Banner = ({ title, description, image, button, selectTheme }) => {
   return (
       <section className={`${styles.banner} bg-${selectTheme}`}>
         {image.data && (

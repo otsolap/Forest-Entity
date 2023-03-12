@@ -1,8 +1,7 @@
 import styles from "@/styles/components/textarea.module.scss";
 import MarkdownBlock from "@/partials/MarkdownBlock";
 
-const Textarea = ({ data }) => {
-  const { text} = data
+const Textarea = ({ text }) => {
   return (
       text ? (
       <section className={styles.content}>

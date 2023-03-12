@@ -1,12 +1,12 @@
 import styles from "@/styles/components/mediaMix.module.scss";
 import MediaMixItem from "@/partials/MediaMixItem";
 
-const MediaMix = ({ data }) => {
-    const { mediaMixColumns } = data
+const MediaMix = ({ mediaMixItems }) => {
+  console.log(mediaMixItems);
   return (
       <div className={styles.mediaMix}>
         <div className={styles.wrapper}>
-          {mediaMixColumns.map((item, i) => {
+          {mediaMixItems ? mediaMixItems.map((item, i) => {
             return (
               <MediaMixItem
                 key={i}
@@ -17,7 +17,7 @@ const MediaMix = ({ data }) => {
                 buttons={item.buttons}
               />
             );
-          })}
+          }): null}
         </div>
       </div>
   );

@@ -2,8 +2,8 @@ import styles from "@/styles/components/blog.module.scss";
 import BlogItem from "partials/BlogItem";
 import CustomLink from "partials/CustomLink";
 
-const BlogSection = ({ data }) => {
-  const { title, description, filter, blogs, link } = data
+const BlogSection = ({ title, description, filter, blogs, link }) => {
+  console.log(blogs);
   return (
       <section className={`${styles.section}`}>
         {title || description ? (

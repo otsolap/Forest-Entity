@@ -1,6 +1,6 @@
-import { getDataDependencies } from "../utils/api";
-import {  getData } from "../utils/index";
-import Blocks from "components/Blocks";
+import { getDataDependencies } from "@/utils/api";
+import {  getData } from "@/utils/index";
+import Blocks from "@/components/Blocks";
 
 const Pages = ({ pageData }) => {
   const blocks = pageData.blocks ?? [];

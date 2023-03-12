@@ -2,8 +2,7 @@ import AccordionItem from "@/partials/AccordionItem";
 import NextImage from "partials/NextImage";
 import styles from "@/styles/components/accordion.module.scss";
 
-const Accordion = ({data}) => {
-  const { image, faqs} = data
+const Accordion = ({ image, faqs}) => {
   return (
     <section className={styles.accordion}>
       <div className={styles.container}>
