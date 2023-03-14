@@ -7,7 +7,6 @@ export async function checkRequiredData(block) {
 export async function getDataDependencies(json) {
   let blocks = json || [];
   blocks = await Promise.all(blocks.map(checkRequiredData));
-  console.log('test' + blocks)
   return {
     ...json,
     blocks,

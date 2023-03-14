@@ -3,7 +3,6 @@ import BlogItem from "partials/BlogItem";
 import CustomLink from "partials/CustomLink";
 
 const BlogSection = ({ title, description, filter, blogs, link }) => {
-  console.log(blogs);
   return (
       <section className={`${styles.section}`}>
         {title || description ? (

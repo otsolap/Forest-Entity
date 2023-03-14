@@ -2,7 +2,6 @@ import styles from "@/styles/components/mediaMix.module.scss";
 import MediaMixItem from "@/partials/MediaMixItem";
 
 const MediaMix = ({ mediaMixItems }) => {
-  console.log(mediaMixItems);
   return (
       <div className={styles.mediaMix}>
         <div className={styles.wrapper}>
