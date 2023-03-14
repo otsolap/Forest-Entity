@@ -24,11 +24,11 @@ const Hero = ({ image, alignContent, autoplay,  media, mediaWidth, title, video,
               ) : (
                 <>
                   <NextImage
-                    className="mobile-only"
+                    className={`mobile-only ${styles.image}`}
                     image={image}
                   />
                   <NextImage
-                    className="desktop-only"
+                    className={`desktop-only ${styles.image}`}
                     image={image}
                   />
                 </>

@@ -4,7 +4,6 @@ export const YouTubeGetID = (url) => {
     return url[2] !== undefined ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
   };
   
-  
   // Paginate helper function
   export const paginate = (items, pageNumber, pageSize) => {
     const startIndex = (pageNumber - 1) * pageSize;
@@ -37,10 +36,30 @@ export function redirectToHomepage() {
   };
 }
 
+export async function fetchGlobalData() {
+  const [navigationResponse, footerResponse] = await Promise.all([
+    fetch(`${getStrapiURL(`/api/navigation/?=${process.env.REST_API_NAVIGATION_QUERY}`)}`),
+    fetch(`${getStrapiURL(`/api/footer/?=${process.env.REST_API_FOOTER_QUERY}`)}`)
+  ]);
+
+  const [navigationData, footerData] = await Promise.all([
+    navigationResponse.json(),
+    footerResponse.json()
+  ]);
+
+  const globalData = {
+    navigation: navigationData,
+    footer: footerData
+  };
+
+  return globalData;
+}
+
+
 // This function will build the url to fetch on the Strapi API
 export function getData(slug) {
   const slugToReturn = `/${slug}`;
-  const apiUrl = `/api/pages?slug=${slug}${process.env.REST_API_QUERY}`;
+  const apiUrl = `/api/pages?slug=${slug}${process.env.REST_API_CONTENT_QUERY}`;
 
   return {
     data: getStrapiURL(apiUrl),

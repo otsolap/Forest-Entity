@@ -14,9 +14,15 @@
 }
 
 .mediaContainer {
+  height: auto;
   width: 100%;
   max-height: 400px;
   overflow: hidden;
+}
+
+.image {
+  width: inherit;
+  height: inherit;
 }
 
 .video {
