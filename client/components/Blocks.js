@@ -4,6 +4,8 @@ import Banner from '@/components/blocks/Banner';
 import BlogSection from '@/components/blocks/BlogSection';
 import Cards from '@/components/blocks/Cards';
 import Mediamix from '@/components/blocks/Mediamix';
+import FooterColumn from '@/partials/FooterColumn';
+import FooterSocialMedia from '@/partials/FooterSocialMedia';
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
   let Block;
@@ -27,6 +29,12 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
     case 'blocks.media-mix':
       Block = Mediamix;
       break;
+    case 'util.footer-column':
+     Block = FooterColumn;
+     break;
+    case 'util.footer-social-media':
+     Block = FooterSocialMedia;
+     break;
     default:
       console.log(`No component found for: ${__component}`)
       break;

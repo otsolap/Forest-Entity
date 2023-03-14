@@ -6,8 +6,7 @@ import MarkdownBlock from "@/partials/MarkdownBlock";
 import styles from '@/styles/components/footer.module.scss';
 import CustomLink from "partials/CustomLink";
 
-const FooterColumn = ({ data }) => {
-  const { id, open, title, description, link } = data;
+const FooterColumn = ({ id, open, title, description, link }) => {
   const contentRef = useRef(null);
   const [active, setActive] = useToggle(open);
 

@@ -5,8 +5,7 @@ import useToggle from '@/hooks/useToggleState';
 import ContactDetails from '@/partials/ContactDetails'
 import styles from '@/styles/components/footer.module.scss';
 
-const FooterSocialMedia = ({  data }) => {
-    const { id, open, title, socialMedia } = data
+const FooterSocialMedia = ({  id, open, title, socialMedia }) => {
     const contentRef = useRef(null)
     const [active, setActive] = useToggle(open)
     useEffect(() => {
